@@ -4,7 +4,12 @@
 
 Refactor the following functions. Use higher-order functions rather than for-loops.
 
-Choose from the following higher-order functions: map, filter, reduce, every, some
+Choose from the following higher-order functions:
+map,
+filter,
+reduce,
+every,
+some
 
 Run the command 'mocha' to test. Tests check for expected output and absence of for-loops.
 
@@ -13,12 +18,21 @@ Run the command 'mocha' to test. Tests check for expected output and absence of 
 module.exports = {
 
   sum: (arr, base) => {
-    let sum = base;
-    for (var i = 0; i < arr.length; i++){
-      sum += arr[i];
-    }
-    return sum;
-  },
+    let sum = arr.reduce((total, num)=>{
+    return total + num;
+
+  });
+  // console.log(sum);
+  return sum;
+},
+
+  // sum: (arr, base) => {
+  //   let sum = base;
+  //   for (var i = 0; i < arr.length; i++){
+  //     sum += arr[i];
+  //   }
+  //   return sum;
+  // },
 
   someObjsContainProp: (arr, prop) => {
     for(var i = 0; i < arr.length; i++){
@@ -28,6 +42,15 @@ module.exports = {
     }
     return false;
   },
+
+  // someObjsContainProp: (arr, prop) => {
+  //   for(var i = 0; i < arr.length; i++){
+  //     if(arr[i].hasOwnProperty(prop)){
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // },
 
   convertNameArrayToObject: (arr) => {
     let nameObj = [];
@@ -41,13 +64,19 @@ module.exports = {
   },
 
   objContainsProp: (arr, prop) => {
-    for (var i = 0; i < arr.length; i++){
-      if(!arr[i].hasOwnProperty(prop)){
-        return false;
-      }
-    }
-    return true;
+    return arr.every((obj)=>{
+      return obj.hasOwnProperty(prop);
+    });
   },
+
+  // objContainsProp: (arr, prop) => {
+  //   for (var i = 0; i < arr.length; i++){
+  //     if(!arr[i].hasOwnProperty(prop)){
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // },
 
   stringMatch: (arr, str) => {
     let matches = [];

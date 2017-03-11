@@ -76,7 +76,7 @@ describe('objContainsProp', () => {
   });
 });
 
-describe('stringMatch', () => {
+describe('', () => {
 
   let testArr = ['apples', 'bananas', 'grapes', 'oranges', 'watermelon'];
 
