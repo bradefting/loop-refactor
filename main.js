@@ -1,8 +1,5 @@
 'use strict';
-
-/*
-
-Refactor the following functions. Use higher-order functions rather than for-loops.
+/* Refactor the following functions. Use higher-order functions rather than for-loops.
 
 Choose from the following higher-order functions:
 map,
@@ -11,20 +8,15 @@ reduce,
 every,
 some
 
-Run the command 'mocha' to test. Tests check for expected output and absence of for-loops.
-
-*/
+Run the command 'mocha' to test. Tests check for expected output and absence of for-loops.*/
 
 module.exports = {
 
   sum: (arr, base) => {
-    let sum = arr.reduce((total, num)=>{
-    return total + num;
-
-  });
-  // console.log(sum);
-  return sum;
-},
+    return base + arr.reduce((total, num)=>{
+      return total + num;
+    });
+  },
 
   // sum: (arr, base) => {
   //   let sum = base;
